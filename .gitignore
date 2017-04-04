@@ -1,0 +1,5 @@
+# .gitignore for project Сомнительные операции
+
+# ignore all files starts with dot and any extension: ".kjhfyreenveryh.txt"
+.*.*
+*qqmm*.txt
