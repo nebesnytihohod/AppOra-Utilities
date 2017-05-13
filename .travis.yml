@@ -2,7 +2,24 @@ language: python
 python:
   - "2.7"
   - "3.6"
+
 # command to install dependencies
-#install: "pip install -r requirements.txt"
+#install: true
+install: "pip install -r requirements.txt"
+
 # command to run tests
-#script: pytest
+script:
+#  - pytest
+  - "autopep8 -i -a qq.py"
+#  - yapf -i   # run code formatters
+  - "pylama > lint_res.txt"    # run linter and static analyzer
+#  - sphinx-build -b html sourcedir builddir # run documentation building
+
+notifications:
+#  email: false    # Turn off email notifications
+  email:
+    recipients:
+      - makcct@yandex.ru
+    on_success: always  # default: change - send a notification when the build status changes
+                       # never - never send a notification
+    on_failure: always # default: always - always send a notification
