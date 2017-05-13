@@ -10,9 +10,9 @@ install: "pip install -r requirements.txt"
 # command to run tests
 script:
 #  - pytest
-  - "autopep8 -i -a qq.py"
+#  - "autopep8 -i -a qq.py"
 #  - yapf -i   # run code formatters
-  - "pylama > lint_res.txt"    # run linter and static analyzer
+  - "pylama qq.py> lint_res.txt"    # run linter and static analyzer
 #  - sphinx-build -b html sourcedir builddir # run documentation building
 
 notifications:
