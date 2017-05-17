@@ -13,7 +13,9 @@ script:
 #  - "autopep8 -i -a qq.py"
 #  - yapf -i   # run code formatters
   - "pylama qq.py"    # run linter and static analyzer
-#  - sphinx-build -b html sourcedir builddir # run documentation building
+  - "sphinx-build -n -b dummy . docs" # run test documentation building
+  - "sphinx-build -n -b linkcheck . docs" # run test documentation building
+#  - "sphinx-build -b html . docs" # run documentation building
 
 notifications:
 #  email: false    # Turn off email notifications

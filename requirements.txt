@@ -5,7 +5,7 @@
 autopep8    # Python linters> static analyzers and formatters
 yapf
 pylama
-#Sphinx
+Sphinx
 #
 ###### Requirements with Version Specifiers ######
 #   See https://www.python.org/dev/peps/pep-0440/#version-specifiers
