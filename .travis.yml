@@ -35,20 +35,20 @@ deploy:
 #      email:              # Optional, comitter info, defaults to deploy@travis-ci.org
 #      name:               # Optional, comitter, defaults to Deployment Bot
 ## Travis CI can automatically upload assets from your $TRAVIS_BUILD_DIR to your git tags on your GitHub repository
-- provider: releases
-     api_key: "4587e15c3f8f8f4b30f6f562a6ed9404ea20ad7e"
-#     file: "FILE TO UPLOAD"
-     skip_cleanup: true
-     overwrite: true      # If you need to overwrite existing files
-     on:
-       tags: true
+  - provider: releases
+      api_key: "4587e15c3f8f8f4b30f6f562a6ed9404ea20ad7e"
+#      file: "FILE TO UPLOAD"
+      skip_cleanup: true
+      overwrite: true      # If you need to overwrite existing files
+      on:
+        tags: true
 ## You can upload multiple files using yml array notation
 #     file:
 #       - "FILE 1"
 #       - "FILE 2"
 ## You can also enable wildcards by setting file_glob to true
-     file_glob: true
-     file: docs/*
+      file_glob: true
+      file: docs/*
 ## Pushing a specific directory
 #     local_dir:          # Directory to push to GitHub Releases, defaults to the current directory
 
