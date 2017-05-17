@@ -47,10 +47,10 @@ deploy:
 #       - "FILE 1"
 #       - "FILE 2"
 ## You can also enable wildcards by setting file_glob to true
-  file_glob: true
-  file: docs/*
+#  file_glob: true
+#  file: docs/*
 ## Pushing a specific directory
-#     local_dir:          # Directory to push to GitHub Releases, defaults to the current directory
+  local_dir: ./docs     # Directory to push to GitHub Releases, defaults to the current directory
 
 notifications:
 #  email: false    # Turn off email notifications
