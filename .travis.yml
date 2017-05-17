@@ -3,11 +3,11 @@ python:
   - "2.7"
   - "3.6"
 
-# command to install dependencies
+## command to install dependencies
 #install: true
 install: "pip install -r requirements.txt"
 
-# command to run tests
+## command to run tests
 script:
 #  - pytest
 #  - "autopep8 -i -a qq.py"
@@ -17,11 +17,55 @@ script:
   - "sphinx-build -n -b linkcheck . docs" # run test documentation building
 #  - "sphinx-build -b html . docs" # run documentation building
 
+deploy:
+#    skip_cleanup: true
+## Travis CI can deploy your static files to GitHub Pages after a successful build
+# - provider: pages
+#      skip_cleanup: true
+#      github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+#      on:              # Deployment can be controlled by setting the on: for each deployment provider.
+#        branch: master
+#        condition: $MY_ENV = <value>
+## Further configuration
+#      local_dir:          # Directory to push to GitHub Pages, defaults to the current directory
+#      repo:               # Repo slug, defaults to current repo
+#      target_branch:      # Branch to push force to, defaults to gh-pages
+#      fqdn:               # Optional, sets a custom domain for your website, defaults to no custom domain support.
+#      project_name:       # Defaults to value of fqdn or repo slug, used for metadata
+#      email:              # Optional, comitter info, defaults to deploy@travis-ci.org
+#      name:               # Optional, comitter, defaults to Deployment Bot
+## Travis CI can automatically upload assets from your $TRAVIS_BUILD_DIR to your git tags on your GitHub repository
+- provider: releases
+     api_key: "4587e15c3f8f8f4b30f6f562a6ed9404ea20ad7e"
+#     file: "FILE TO UPLOAD"
+     skip_cleanup: true
+     overwrite: true      # If you need to overwrite existing files
+     on:
+       tags: true
+## You can upload multiple files using yml array notation
+#     file:
+#       - "FILE 1"
+#       - "FILE 2"
+## You can also enable wildcards by setting file_glob to true
+     file_glob: true
+     file: docs/*
+## Pushing a specific directory
+#     local_dir:          # Directory to push to GitHub Releases, defaults to the current directory
+
 notifications:
 #  email: false    # Turn off email notifications
   email:
     recipients:
       - makcct@yandex.ru
     on_success: always  # default: change - send a notification when the build status changes
-                       # never - never send a notification
-    on_failure: always # default: always - always send a notification
+                        # never - never send a notification
+    on_failure: always  # default: always - always send a notification
+
+## define environment variables
+env:
+  global:
+    # environment variables for deploy your build artifacts
+    - GITHUBPAGES_DEPLOY=true
+#  matrix:
+#    - USE_NETWORK=true
+#    - USE_NETWORK=false
