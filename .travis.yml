@@ -15,7 +15,7 @@ script:
   - "pylama qq.py"    # run linter and static analyzer
   - "sphinx-build -nW -b dummy . docs" # run test documentation building
   - "sphinx-build -n -b linkcheck . docs" # run test documentation building
-#  - "sphinx-build -b html . docs" # run documentation building
+  - "sphinx-build -b html . docs" # run documentation building
 
 deploy:
 #    skip_cleanup: true
