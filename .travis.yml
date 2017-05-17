@@ -36,7 +36,7 @@ deploy:
 #      name:               # Optional, comitter, defaults to Deployment Bot
 ## Travis CI can automatically upload assets from your $TRAVIS_BUILD_DIR to your git tags on your GitHub repository
   - provider: releases
-      api_key: "4587e15c3f8f8f4b30f6f562a6ed9404ea20ad7e"
+      api_key:"4587e15c3f8f8f4b30f6f562a6ed9404ea20ad7e"
 #      file: "FILE TO UPLOAD"
       skip_cleanup: true
       overwrite: true      # If you need to overwrite existing files
