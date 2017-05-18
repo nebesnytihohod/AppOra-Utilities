@@ -1,6 +1,10 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+'''
+utilities for app on Oracle platform
+'''
+
 import os
 import sys
 import re
